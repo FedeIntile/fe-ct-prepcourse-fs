@@ -89,14 +89,21 @@ function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-   let resultado = resultadosTest.reduce((a,b) => a + b, 0); 
-   return resultado/resultadosTest.length;  
+
+   // este fucniona, pero nos piden un bucle
+  // let resultado = resultadosTest.reduce((a,b) => a + b, 0); 
+  // return resultado/resultadosTest.length;  
+   let acumulador = 0; 
+  for(i=0; i<resultadosTest.length; i++){
+   acumulador += resultadosTest[i]; 
+  } return acumulador/resultadosTest.length;
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
+
 }
 
 function multiplicarArgumentos() {
