@@ -192,14 +192,17 @@ function cuentoElementos(array) {
    // } return cantidad; 
 
    // aplicando el metodo forEach
-   let cantidad = 0; 
-   array.forEach((element) => {
-      if(element > 18){
-         cantidad = cantidad +1; 
-      }
-   });    
-   return cantidad; 
+   // let cantidad = 0; 
+   // array.forEach((element) => {
+   //    if(element > 18){
+   //       cantidad = cantidad +1; 
+   //    }
+   // });    
+   // return cantidad; 
 
+   // con el metodo filter que lo que haces es devolver un nuevo array que cumpla alguna caracteristica
+   let cantidad = array.filter((elemento) => elemento >18); 
+   return cantidad.length; 
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -209,15 +212,21 @@ function diaDeLaSemana(numeroDeDia) {
    // Tu código:
    if (numeroDeDia === 1 || numeroDeDia === 7 ){
       return "Es fin de semana"
-   } else return "Es dia laboral"
-
+   } else return "Es dia laboral"   
+   
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar True si el entero inicia con 9 y False en otro caso.
    // Tu código:
-      
+
+   let nuevostring = num.toString(); //// otra forma de pasarlo a strin es : let nuevostring = String(num);
+   if (nuevostring[0]==="9"){   // aca el 9 va netre comillas por es un caracter del string
+      return true; 
+   } else return false;     
+   
+   // return nuevostring[0]==="9" // esta linea sola tambein puede funcionar, devuelve true o false
 
 }
 
@@ -225,6 +234,17 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar True.
    // Caso contrario retornar False.
    // Tu código:
+   let primero = array[0];
+   for(i=1;i<array.length;i++){
+      if(array[i]!==primero){
+         return false;
+      }
+   } return true; 
+
+    // este metodo tambien funciona
+   //  var nuevo = new set(array); // lo que hace set es almacenar valores únicos de cualquier tipo(elimima los elementos repetidos)
+   //  return nuevo===1; 
+   
 }
 
 function mesesDelAño(array) {
@@ -232,15 +252,29 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+
+   let nuevoarray=[];
+   for(i=0;i<array.length;i++){
+      if (array[i] === "Enero" || array[i]==="Marzo" || array[i]==="Noviembre"){
+         nuevoarray.push(array[i]);         
+      } 
+   }
+   if (nuevoarray.length ===3){
+      return nuevoarray
+   } else return "No se encontraron los meses pedidos"
+
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
-   
-   for (i=0; i<10; i++){
-    let tabla=[].push(i*6); 
+
+   // return [0,6,12,18,24,30,36,42,48,54,60] // esto tambein funciona
+
+   let tabla=[]; 
+   for (i=0; i<=10; i++){
+    tabla.push(i*6); 
    } return tabla; 
 
 }
@@ -251,10 +285,9 @@ function mayorACien(array) {
    // Tu código:
    let nuevoarray =[]; 
    for (i=0; i<array.length; i++){
-      if(array[i] >=101 || array[i] <=200 ){
-         nuevoarray = nuevoarray.push; 
+      if(array[i] >100){
+          nuevoarray.push(array[i]); 
       }
-
    } return nuevoarray; 
 }
 
@@ -269,7 +302,25 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
-}
+
+   let i = 1;
+   let res = [];
+
+   while (i<=10){
+      num = num +2 // o num +=2
+      if (num ===i){
+         break; 
+      } else {
+         res.push(num)
+         i++; 
+      }
+   }
+      
+      if (i<10){
+         return "Se interrumpió la ejecución"
+      } else return res; 
+
+   }
 
 function continueStatement(num) {
    // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
@@ -278,7 +329,19 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
-}
+
+   let i = 0;
+   let res = [];
+
+   while (i<10){
+      i++; 
+        if (i===5)continue;
+         num = num +2          
+        res.push(num)
+      }return res;
+   }  
+      
+
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
