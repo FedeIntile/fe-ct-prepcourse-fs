@@ -182,8 +182,9 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
     let descuento = objetoProducto.precio * objetoProducto.porcentajeDeDescuento
     objetoProducto["Precio final"] = objetoProducto.precio - descuento
     return objetoProducto["Precio final"]; 
-   }
+   } 
    return objetoProducto; 
+
 
 }
 
