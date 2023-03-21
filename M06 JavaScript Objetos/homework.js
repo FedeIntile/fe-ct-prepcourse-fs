@@ -9,22 +9,22 @@ function crearGato(nombre, edad) {
    // Tu código:
 
    //opción 1
-   // let objeto= {}; 
-   // objeto.edad=edad ;
-   // objeto.nombre=nombre;
-   // objeto.meow= function(){ return "Meow!"}
-   // return objeto; 
+   let objeto= {}; 
+   objeto.edad=edad ;
+   objeto.nombre=nombre;
+   objeto.meow= function(){ return "Meow!"}
+   return objeto; 
 
     //opción 2
    //  let objeto ={nombre: nombre , edad: edad, meow: function(){return "Meow!"}}
    //  return objeto
 
    // opción 3
-   let objeto= {}; 
-   objeto["edad"]=edad ;
-   objeto["nombre"]=nombre;
-   objeto["meow"]= function(){ return "Meow!"}
-   return objeto; 
+   // let objeto= {}; 
+   // objeto["edad"]=edad ;
+   // objeto["nombre"]=nombre;
+   // objeto["meow"]= function(){ return "Meow!"}
+   // return objeto; 
 
 }
 
@@ -119,7 +119,7 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
    // Debes agregar el "nuevoAmigo" al final de este arreglo.
    // Retornar el objeto.
    // Tu código:
-   objetoUsuario.amigos.push(nuevoAmigo);
+   objetoUsuario.amigos.push(nuevoAmigo);  // objetoUsuario: { amigos:[] }  
    return objetoUsuario;
 }
 
@@ -129,6 +129,9 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
    // Define esta propiedad de todos los usuarios como True.
    // Retornar el arreglo.
    // Tu código:
+
+    // objetoMuchosUsuarios: [{esPremium:"x"},{esPremium:"x"},{esPremium:"x"},{esPremium:"x"},{esPremium:"x"}]
+
    // opción 1
    // for (var i=0; i<objetoMuchosUsuarios.length; i++){
    //    objetoMuchosUsuarios[i].esPremium = true; 
@@ -137,18 +140,19 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
 
    //opción 2
 
-   //  let nuevoarray = objetoMuchosUsuarios.forEach(usuario => {
-   //    usuario["esPremium"] = true; 
+      objetoMuchosUsuarios.forEach(usuario => {
+      usuario["esPremium"] = true; 
       
-   // });
-   // return objetoMuchosUsuarios;
+   });
+   return objetoMuchosUsuarios;
+
 
    //opción 3:
 
-   for(var usuario of objetoMuchosUsuarios){
-      usuario.esPremium = true; 
-   }
-   return objetoMuchosUsuarios; 
+   // for(var usuario of objetoMuchosUsuarios){
+   //    usuario.esPremium = true; 
+   // }
+   // return objetoMuchosUsuarios; 
 }  
 
 function sumarLikesDeUsuario(objetoUsuario) {
@@ -157,14 +161,22 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
-   //opción 1:
-   let contador = 0;
-   objetoUsuario.posts.forEach((post) =>{
-      contador = contador + post.likes;
-   })  
-   return contador;    
 
-}
+   // objetoUsuario: { posts: [ {likes:5},{likes:5},{likes:5},{likes:5} ] }
+
+   //opción 1:
+   // let contador = 0;
+   // objetoUsuario.posts.forEach((post) =>{
+   //    contador = contador + post.likes;
+   // })  
+   // return contador;    
+
+   let contador = 0;
+   for(let i=0;i<objetoUsuario.posts.length;i++){
+      contador = contador + objetoUsuario.posts[i].likes; 
+   }
+   return contador; 
+}  
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
    // Agrega una propiedad al "objetoProducto" con el nombre "calcularPrecioDescuento".

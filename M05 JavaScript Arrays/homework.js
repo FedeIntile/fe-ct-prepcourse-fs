@@ -222,11 +222,11 @@ function empiezaConNueve(num) {
    // Tu código:
 
    let nuevostring = num.toString(); //// otra forma de pasarlo a strin es : let nuevostring = String(num);
-   if (nuevostring[0]==="9"){   // aca el 9 va netre comillas por es un caracter del string
+   if (nuevostring[0]==="9"){   // aca el 9 va entre comillas por que es un caracter del string
       return true; 
    } else return false;     
    
-   // return nuevostring[0]==="9" // esta linea sola tambein puede funcionar, devuelve true o false
+   // return nuevostring[0]==="9" // esta linea sola tambien puede funcionar, devuelve true o false
 
 }
 
@@ -270,7 +270,7 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
 
-   // return [0,6,12,18,24,30,36,42,48,54,60] // esto tambein funciona
+   // return [0,6,12,18,24,30,36,42,48,54,60] // esto tambien funciona
 
    let tabla=[]; 
    for (i=0; i<=10; i++){

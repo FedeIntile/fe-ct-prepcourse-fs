@@ -5,6 +5,13 @@ function mayuscula(nombre) {
    // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
+      
+   return nombre[0].toUpperCase() + nombre.slice(1); 
+   // en la primera parte solo retorna la primera letra en mayuscula aplicando el metodo toUpperCase
+   // luego se concatena usando el metodo slice(metodo array) que se usa pasando como paramentro la primera
+   // primera posicion de la cadena(como si fuera un array) y devuelve de la misma hst el final
+   //tambien se puede usar slice con 2 parametros ej.nombre.slice(2,3) y devuelve las posiciones
+   // de la 2 hasta una antes de las 3
 }
 
 function invocarCallback(cb) {
